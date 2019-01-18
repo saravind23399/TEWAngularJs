@@ -1,9 +1,13 @@
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from 'src/app/home/home.component';
-import { HOME_ROUTE } from './home.routes';
-/////////////////////////////////////////////////
+
+import { USER_ROUTE } from './user.routes';
+
+import { LandingComponent } from 'src/app/Components/landing/landing.component';
+import { LoginComponent } from 'src/app/Components/login/login.component';
+
+
 const APP_ROUTES: Routes = [
-     {path: 'home', component: HomeComponent, children: HOME_ROUTE}
+    {path:'user', component: LandingComponent ,children:USER_ROUTE}
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

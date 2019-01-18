@@ -1,27 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { JwtHelper } from 'angular2-jwt';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './Components/landing/landing.component';
 
-import { routing } from './Routes/app.routes';
+import { routing } from '../routes/app.routes';
 import { LoginComponent } from './Components/login/login.component';
-import { HomeNavbarComponent } from './home/home-navbar/home-navbar.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    LoginComponent,
-    HomeNavbarComponent,
-    HomeComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule,
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    JwtHelper
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
