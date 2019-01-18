@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtHelper } from 'angular2-jwt';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,6 @@ import { LoginComponent } from './Components/login/login.component';
     routing,
     FormsModule,
     HttpClientModule,
-    NgbModule
   ],
   providers: [
     JwtHelper
