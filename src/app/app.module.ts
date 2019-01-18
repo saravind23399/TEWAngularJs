@@ -10,12 +10,16 @@ import { LandingComponent } from './Components/landing/landing.component';
 
 import { routing } from '../routes/app.routes';
 import { LoginComponent } from './Components/login/login.component';
+import { ChangepasswordComponent } from './Components/changepassword/changepassword.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    LoginComponent
+    LoginComponent,
+    ChangepasswordComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
