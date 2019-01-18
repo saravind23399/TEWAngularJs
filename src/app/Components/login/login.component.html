@@ -4,15 +4,24 @@
 		<h2 class="active"> SIGN IN </h2>
 		<br><br>
 		<!-- Login Form -->
-		<form>
-			<input type="email" id="login" class="fadeIn second" name="email" placeholder="Your Email">
-			<input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
-			<input type="submit" class="fadeIn fourth" value="Log In">
+		<form class="" [formGroup]="loginForm" (ngSubmit)=onSubmit(loginForm.value)>
+			<input type="email" class="fadeIn second" placeholder="Your Email" formControlName="email_id" [ngClass]="{'is-invalid': submitted &&f.email_id.errors}">
+			<div *ngIf="submitted && f.email_id.errors" class="invalid-feedback">
+				<div *ngIf="f.email_id.errors.required">Email_id is required</div>
+			</div>
+			
+			<input type="password" class="fadeIn third" placeholder="Your Password" formControlName="password" [ngClass]="{'is-invalid': submitted &&f.password.errors}">
+			<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+				<div *ngIf="f.password.errors.required">Password is required</div>
+			</div>
+
+			<input type="submit" class="fadeIn fourth" value="{{ this.Button }}">
 		</form>
 
 		<!-- Remind Passowrd -->
 		<div id="formFooter">
-			<a class="nav-link underlineHover" [routerLink]="['/changePassword']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Change Password ?</a>
+			<a class="nav-link underlineHover" [routerLink]="['/changePassword']" [routerLinkActive]="['active']"
+			 [routerLinkActiveOptions]="{exact:true}">Change Password ?</a>
 		</div>
 
 	</div>

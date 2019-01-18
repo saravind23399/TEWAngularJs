@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  server = 'localhost:3000';
+  server = 'http://localhost:3000';
 
   constructor(private http: HttpClient, private jwtHelper: JwtHelper) { }
 
@@ -21,10 +21,11 @@ export class AuthService {
     const body = { email_id: email_id, password: password };
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    console.log(this.getUrl('users/authenticate'));
     return this.http.post(this.getUrl('users/authenticate'), body).pipe(map(res => res, {'headers': headers}));
   }
   
-  createSession(response) {
+  createSession(response: any) {
     localStorage.setItem('user', JSON.stringify(response.user));
     localStorage.setItem('token', response.token);
   }
