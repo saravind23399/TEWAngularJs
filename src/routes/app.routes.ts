@@ -6,6 +6,7 @@ import { ChangepasswordComponent } from 'src/app/Components/changepassword/chang
 import { ParticipantsComponent } from 'src/app/Components/participants/participants.component';
 import { AdminParticipantsComponent } from 'src/app/Components/admin-participants/admin-participants.component';
 import { AdminUploadComponent } from 'src/app/Components/admin-upload/admin-upload.component';
+import { ViewFilesComponent } from 'src/app/Components/view-files/view-files.component';
 
 const APP_ROUTES: Routes = [
     //{path:'user', component: LandingComponent ,children:USER_ROUTE}
@@ -14,7 +15,8 @@ const APP_ROUTES: Routes = [
     {path:'changePassword', component: ChangepasswordComponent},
     {path:'participants', component: ParticipantsComponent},
     {path:'adminParticipants', component: AdminParticipantsComponent},
-    {path: 'adminUpload' , component: AdminUploadComponent}
+    {path: 'adminUpload' , component: AdminUploadComponent},
+    {path: 'viewFile' , component: ViewFilesComponent}
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

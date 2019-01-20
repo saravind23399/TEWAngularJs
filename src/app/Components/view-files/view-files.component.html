@@ -1,10 +1,12 @@
-<label id="largeFile" for="file">
-    <input type="file" id="file" (change)="processFile($event)" />
-</label>
-<br><br><br><br><br><br><br><br><br><br><br>
-<hr>
-
+<br>
 <div class="row">
+  <div class="col-1"></div>
+  <div class="col-3" *ngFor="let speaker of speakers">
+    <button class="btn btn-info" (click)="getFiles(speaker._id)">{{ speaker.userProfileName }}</button>
+  </div>
+</div>
+
+<div class="row" *ngIf="clicked">
     <div class="col-1"></div>
     <div class="col-10">
         <div class="card">
@@ -20,8 +22,7 @@
                                 {{ file.fileName }}
                             </div>
                             <div class="card-body">
-                                <button class="btn btn-info"><a download href="">Download</a></button>&nbsp;
-                                <button class="btn btn-danger" (click)="deleteFile(file._id)">Delete</button>
+                                <button class="btn btn-info"><a download href="">Download</a></button>
                             </div>
                         </div>
                     </div>
@@ -29,5 +30,4 @@
             </div>
         </div>
     </div>
-
 </div>

@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       const password = this.loginForm.value.password;
       this.authService.authenticate(email_id, password).subscribe((response: any) => {
         if (response.success) {
+          window.location.reload();
           this.router.navigate(['']);
           this.toastr.successToastr(response.msg.desc, 'Success', { position: 'bottom-right' });
           this.authService.createSession(response);

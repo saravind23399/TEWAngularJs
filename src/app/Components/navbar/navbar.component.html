@@ -14,12 +14,18 @@
         </li>
         <span *ngIf="auth.isLoggedIn()">
           <li class="nav-item" *ngIf="isParticipant(); else adminLoggedIn">
+            <a class="nav-link" [routerLink]="['/viewFile']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">View
+            Files</a>
           </li>
           <ng-template #adminLoggedIn>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/adminUpload']" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{exact:true}">Upload Files</a>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Create Users
+                Manage Users
               </a>
               <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
                 <div class="dropdown-divider"></div>
@@ -43,9 +49,10 @@
             </a>
             <div class="dropdown-menu animated fadeIn" aria-labelledby="navbarDropdown">
               <div class="dropdown-divider"></div>
-              <a class="nav-link" [routerLink]="['/changePassword']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Change Password</a>              
+              <a class="nav-link" [routerLink]="['/changePassword']" [routerLinkActive]="['active']"
+                [routerLinkActiveOptions]="{exact:true}">Change Password</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" (click)="logout()">Log out</a>
+              <a class="nav-link" (click)="logout()">Log out</a>
             </div>
           </li>
         </ng-template>

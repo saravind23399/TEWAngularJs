@@ -42,4 +42,22 @@ export class ParticipantsService {
     return this.http.post(this.getUrl('users/removeParticipant'), body).pipe(map(res => res, {'headers': headers}));
   }
 
+  uploadFile(formData: FormData) {
+    let headers = new Headers();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.post(this.getUrl('users/uploadFile/')+formData.get('_id'), formData);
+  }
+
+  getFile(id: String){
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.getUrl('users/files/'+id)).pipe(map(res => res, {'headers': headers}));
+  }
+
+  deleteFile(id: String){
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(this.getUrl('users/deleteFile/'+id)).pipe(map(res => res, {'headers': headers}));
+  }
+
 }

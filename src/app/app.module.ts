@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ParticipantsComponent } from './Components/participants/participants.component';
 import { AdminParticipantsComponent } from './Components/admin-participants/admin-participants.component';
 import { AdminUploadComponent } from './Components/admin-upload/admin-upload.component';
+import { ParticipantsService } from './Services/participants/participants.service';
+import { ViewFilesComponent } from './Components/view-files/view-files.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { AdminUploadComponent } from './Components/admin-upload/admin-upload.com
     NavbarComponent,
     ParticipantsComponent,
     AdminParticipantsComponent,
-    AdminUploadComponent
+    AdminUploadComponent,
+    ViewFilesComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { AdminUploadComponent } from './Components/admin-upload/admin-upload.com
   ],
   providers: [
     JwtHelper,
-    AuthService
+    AuthService,
+    ParticipantsService
   ],
   bootstrap: [AppComponent]
 })
