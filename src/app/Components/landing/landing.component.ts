@@ -7,11 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
-
   constructor() {
   }
 
   ngOnInit() {
+
     /*$(document).ready(function () {
       $('body').scrollspy({
         target: ".scrollspy",

@@ -286,3 +286,4 @@ var myTopProductsChart = new Chart(topProductsChart, {
 		}
 	}
 });
+

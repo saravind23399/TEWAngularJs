@@ -20,6 +20,7 @@ import { AdminParticipantsComponent } from './Components/admin-participants/admi
 import { AdminUploadComponent } from './Components/admin-upload/admin-upload.component';
 import { ParticipantsService } from './Services/participants/participants.service';
 import { ViewFilesComponent } from './Components/view-files/view-files.component';
+import { SpeakersComponent } from './Components/speakers/speakers.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ViewFilesComponent } from './Components/view-files/view-files.component
     ParticipantsComponent,
     AdminParticipantsComponent,
     AdminUploadComponent,
-    ViewFilesComponent
+    ViewFilesComponent,
+    SpeakersComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { ParticipantsComponent } from 'src/app/Components/participants/participa
 import { AdminParticipantsComponent } from 'src/app/Components/admin-participants/admin-participants.component';
 import { AdminUploadComponent } from 'src/app/Components/admin-upload/admin-upload.component';
 import { ViewFilesComponent } from 'src/app/Components/view-files/view-files.component';
+import { SpeakersComponent } from 'src/app/Components/speakers/speakers.component';
 
 const APP_ROUTES: Routes = [
     //{path:'user', component: LandingComponent ,children:USER_ROUTE}
@@ -16,7 +17,8 @@ const APP_ROUTES: Routes = [
     {path:'participants', component: ParticipantsComponent},
     {path:'adminParticipants', component: AdminParticipantsComponent},
     {path: 'adminUpload' , component: AdminUploadComponent},
-    {path: 'viewFile' , component: ViewFilesComponent}
+    {path: 'viewFile' , component: ViewFilesComponent},
+    {path: 'speakers', component: SpeakersComponent}
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES);

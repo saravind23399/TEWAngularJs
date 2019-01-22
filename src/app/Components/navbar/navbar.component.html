@@ -10,12 +10,15 @@
     <form class="form-inline my-2 my-lg-0">
       <ul class="nav nav-line nav-color-secondary">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/speakers">Speakers</a>
         </li>
         <span *ngIf="auth.isLoggedIn()">
           <li class="nav-item" *ngIf="isParticipant(); else adminLoggedIn">
             <a class="nav-link" [routerLink]="['/viewFile']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">View
-            Files</a>
+              Files</a>
           </li>
           <ng-template #adminLoggedIn>
             <li class="nav-item">
