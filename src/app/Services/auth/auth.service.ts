@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  server = 'http://localhost:3000';
+  server = 'https://mepcotew.herokuapp.com';
 
   constructor(private http: HttpClient, private jwtHelper: JwtHelper) { }
 
